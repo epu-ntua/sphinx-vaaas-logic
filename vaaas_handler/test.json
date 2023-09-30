@@ -1,0 +1,37 @@
+{
+  "status_code": "0",
+  "result": "GET_TASK_SUCCESS",
+  "more": "",
+  "items": {
+    "task": {
+      "name": "10_0_100_98",
+      "processes": {
+        "NSE": {
+          "status": "ended",
+          "etc": 0,
+          "progress": 0,
+          "remaining": 0
+        },
+        "ARP Ping Scan": {
+          "status": "ended",
+          "etc": "1615365951",
+          "progress": "100.00",
+          "remaining": "0"
+        },
+        "Parallel DNS resolution of 1 host.": {
+          "status": "ended",
+          "etc": 0,
+          "progress": 0,
+          "remaining": 0
+        },
+        "SYN Stealth Scan": {
+          "status": "started",
+          "etc": "1615381889",
+          "progress": "1.60",
+          "remaining": "15683"
+        }
+      },
+      "reports": {}
+    }
+  }
+}

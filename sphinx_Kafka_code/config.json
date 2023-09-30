@@ -1,0 +1,9 @@
+{
+    "SM_IP": "http://sphinx-kubernetes.intracom-telecom.com/SMPlatform/manager/rst",
+    "KAFKA_USERNAME": "kafkauser",
+    "KAFKA_PASSWORD": "kafkauser123",
+    "OAUTH_CLIENT_ID": "SIEM",
+    "OAUTH_TOKEN_ENDPOINT_URI": "http://sphinx-kubernetes.intracom-telecom.com/SMPlatform/manager/rst/getKafkaToken",
+    "BOOTSTRAP_SERVERS": "bootstrap.146.124.106.170.nip.io:443",
+    "KAFKA_CERT": "for_clients.crt",
+  }

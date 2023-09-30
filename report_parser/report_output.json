@@ -1,0 +1,162 @@
+{
+  '10_0_100_1': {
+    'id': 'bundle--c5b81255-d715-4103-8c06-10e3dafeb30e',
+    'assessment_date': 'Wed Mar 17 07:51:02 2021',
+    'task_name': '10.0.100.1',
+    'objects': [
+      {
+        'value': '10.0.100.1',
+        'type': 'ipv4-addr',
+        'spec_version': '2.1',
+        'id': 'ipv4-addr--b56180b8-7404-5850-9694-da40d5f97f2e'
+      },
+      {
+        'value': 'CE:FD:CB:62:25:2F',
+        'type': 'mac-addr',
+        'spec_version': '2.1',
+        'id': 'mac-addr--9a312619-9a59-5a7f-89a9-7b7d203cb50e'
+      },
+      {
+        'type': 'relationship',
+        'spec_version': '2.1',
+        'id': 'relationship--b4e77d3c-c317-4aef-94d9-bbd6be32d314',
+        'created': '2021-03-17T07:51:47.001085Z',
+        'modified': '2021-03-17T07:51:47.001085Z',
+        'source_ref': 'ipv4-addr--b56180b8-7404-5850-9694-da40d5f97f2e',
+        'relationship_type': 'has',
+        'target_ref': 'mac-addr--9a312619-9a59-5a7f-89a9-7b7d203cb50e'
+      },
+      {
+        'port': '53',
+        'protocol': 'tcp',
+        'state': 'open',
+        'service_name': 'domain',
+        'scripts_list': [
+          {
+            'id': 'fingerprint-strings',
+            'output': [
+              '  DNSVersionBindReqTCP: ',
+              '    version',
+              '    bind'
+            ],
+            'elements': {
+              'DNSVersionBindReqTCP': '\n    version\n    bind'
+            }
+          }
+        ],
+        'type': 'x-discovered-service',
+        'spec_version': '2.1',
+        'id': 'x-discovered-service--bf85a621-7413-4a04-8f4a-d954f55830db',
+        'created': '2021-03-17T07:51:47.001085Z',
+        'modified': '2021-03-17T07:51:47.001085Z'
+      },
+      {
+        'port': '80',
+        'protocol': 'tcp',
+        'state': 'open',
+        'service_name': 'http-proxy',
+        'service_product': 'HAProxy http proxy',
+        'service_product_version': '1.3.1 or later',
+        'service_cpe_list': [
+          'cpe:/a:haproxy:haproxy'
+        ],
+        'scripts_list': [
+          {
+            'id': 'vulscan',
+            'output': [
+              'cve.csv:',
+              '[CVE-2011-4451] ** DISPUTED ** libs/Wakka.class.php in WikkaWiki 1.3.1 and 1.3.2, when the spam_logging option is enabled, allows remote attackers to write arbitrary PHP code to the spamlog_path file via the User-Agent HTTP header in an addcomment request.  NOTE: the vendor disputes this issue because the rendering of the spamlog_path file never uses the PHP interpreter.',
+              '[CVE-2011-4449] actions/files/files.php in WikkaWiki 1.3.1 and 1.3.2, when INTRANET_MODE is enabled, supports file uploads for file extensions that are typically absent from an Apache HTTP Server TypesConfig file, which makes it easier for remote attackers to execute arbitrary PHP code by placing this code in a file whose name has multiple extensions, as demonstrated by a (1) .mm or (2) .vpp file.',
+              '[CVE-2011-4140] The CSRF protection mechanism in Django through 1.2.7 and 1.3.x through 1.3.1 does not properly handle web-server configurations supporting arbitrary HTTP Host headers, which allows remote attackers to trigger unauthenticated forged requests via vectors involving a DNS CNAME record and a web page containing JavaScript code.',
+              "[CVE-2011-4139] Django before 1.2.7 and 1.3.x before 1.3.1 uses a request's HTTP Host header to construct a full URL in certain circumstances, which allows remote attackers to conduct cache poisoning attacks via a crafted request.",
+              "[CVE-2009-4492] WEBrick 1.3.1 in Ruby 1.8.6 through patchlevel 383, 1.8.7 through patchlevel 248, 1.8.8dev, 1.9.1 through patchlevel 376, and 1.9.2dev writes data to a log file without sanitizing non-printable characters, which might allow remote attackers to modify a window's title, or possibly execute arbitrary commands or overwrite files, via an HTTP request containing an escape sequence for a terminal emulator.",
+              '[CVE-2008-1385] Cross-site scripting (XSS) vulnerability in the Top Referrers (aka referrer) plugin in Serendipity (S9Y) before 1.3.1 allows remote attackers to inject arbitrary web script or HTML via the Referer HTTP header.',
+              "[CVE-2007-5273] Sun Java Runtime Environment (JRE) in JDK and JRE 6 Update 2 and earlier, JDK and JRE 5.0 Update 12 and earlier, SDK and JRE 1.4.2_15 and earlier, and SDK and JRE 1.3.1_20 and earlier, when an HTTP proxy server is used, allows remote attackers to violate the security model for an applet's outbound connections via a multi-pin DNS rebinding attack in which the applet download relies on DNS resolution on the proxy server, but the applet's socket operations rely on DNS resolution on the local machine, a different issue than CVE-2007-5274. NOTE: this is similar to CVE-2007-5232.",
+              '[CVE-2007-0760] EQdkp 1.3.1 and earlier authenticates administrative requests by verifying that the HTTP Referer header specifies an admin/ URL, which allows remote attackers to read or modify account names and passwords via a spoofed Referer.',
+              '[CVE-2004-2124] The register_globals simulation capability in Gallery 1.3.1 through 1.4.1 allows remote attackers to modify the HTTP_POST_VARS variable and conduct a PHP remote file inclusion attack via the GALLERY_BASEDIR parameter, a different vulnerability than CVE-2002-1412.',
+              '[CVE-2001-0399] Caucho Resin 1.3b1 and earlier allows remote attackers to read source code for Javabean files by inserting a .jsp before the WEB-INF specifier in an HTTP request.',
+              '[CVE-2013-2070] http/modules/ngx_http_proxy_module.c in nginx 1.1.4 through 1.2.8 and 1.3.0 through 1.4.0, when proxy_pass is used with untrusted HTTP servers, allows remote attackers to cause a denial of service (crash) and obtain sensitive information from worker process memory via a crafted proxy response, a similar vulnerability to CVE-2013-2028.',
+              '[CVE-2011-4317] The mod_proxy module in the Apache HTTP Server 1.3.x through 1.3.42, 2.0.x through 2.0.64, and 2.2.x through 2.2.21, when the Revision 1179239 patch is in place, does not properly interact with use of (1) RewriteRule and (2) ProxyPassMatch pattern matches for configuration of a reverse proxy, which allows remote attackers to send requests to intranet servers via a malformed URI containing an @ (at sign) character and a : (colon) character in invalid positions.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2011-3368.',
+              '[CVE-2011-3368] The mod_proxy module in the Apache HTTP Server 1.3.x through 1.3.42, 2.0.x through 2.0.64, and 2.2.x through 2.2.21 does not properly interact with use of (1) RewriteRule and (2) ProxyPassMatch pattern matches for configuration of a reverse proxy, which allows remote attackers to send requests to intranet servers via a malformed URI containing an initial @ (at sign) character.',
+              '[CVE-2010-3574] Unspecified vulnerability in the Networking component in Oracle Java SE and Java for Business 6 Update 21, 5.0 Update 25, 1.4.2_27, and 1.3.1_28 allows remote attackers to affect confidentiality, integrity, and availability via unknown vectors.  NOTE: the previous information was obtained from the October 2010 CPU.  Oracle has not commented on claims from a reliable downstream vendor that HttpURLConnection does not properly check for the allowHttpTrace permission, which allows untrusted code to perform HTTP TRACE requests.',
+              '[CVE-2010-3553] Unspecified vulnerability in the Swing component in Oracle Java SE and Java for Business 6 Update 21, 5.0 Update 25, 1.4.2_27, and 1.3.1_28 allows remote attackers to affect confidentiality, integrity, and availability via unknown vectors.  NOTE: the previous information was obtained from the October 2010 CPU.  Oracle has not commented on claims from a reliable downstream vendor that this is related to unsafe reflection involving the UIDefault.ProxyLazyValue class.',
+              '[CVE-2010-3549] Unspecified vulnerability in the Networking component in Oracle Java SE and Java for Business 6 Update 21, 5.0 Update 25, 1.4.2_27, and 1.3.1_28 allows remote attackers to affect confidentiality, integrity, and availability via unknown vectors.  NOTE: the previous information was obtained from the October 2010 CPU.  Oracle has not commented on claims from a reliable downstream vendor that this is an HTTP request splitting vulnerability involving the handling of the chunked transfer encoding method by the HttpURLConnection class.',
+              '[CVE-2010-3541] Unspecified vulnerability in the Networking component in Oracle Java SE and Java for Business 6 Update 21, 5.0 Update 25, 1.4.2_27, and 1.3.1_28 allows remote attackers to affect confidentiality, integrity, and availability via unknown vectors.  NOTE: the previous information was obtained from the October 2010 CPU.  Oracle has not commented on claims from a reliable downstream vendor that this is related to missing validation of request headers in the HttpURLConnection class when they are set by applets, which allows remote attackers to bypass the intended security policy.',
+              '[CVE-2010-1623] Memory leak in the apr_brigade_split_line function in buckets/apr_brigade.c in the Apache Portable Runtime Utility library (aka APR-util) before 1.3.10, as used in the mod_reqtimeout module in the Apache HTTP Server and other software, allows remote attackers to cause a denial of service (memory consumption) via unspecified vectors related to the destruction of an APR bucket.',
+              '[CVE-2010-0010] Integer overflow in the ap_proxy_send_fb function in proxy/proxy_util.c in mod_proxy in the Apache HTTP Server before 1.3.42 on 64-bit platforms allows remote origin servers to cause a denial of service (daemon crash) or possibly execute arbitrary code via a large chunk size that triggers a heap-based buffer overflow.',
+              '[CVE-2009-3877] Unspecified vulnerability in Sun Java SE in JDK and JRE 5.0 before Update 22, JDK and JRE 6 before Update 17, SDK and JRE 1.3.x before 1.3.1_27, and SDK and JRE 1.4.x before 1.4.2_24 allows remote attackers to cause a denial of service (memory consumption) via crafted HTTP headers, which are not properly parsed by the ASN.1 DER input stream parser, aka Bug Id 6864911.',
+              '[CVE-2009-0164] The web interface for CUPS before 1.3.10 does not validate the HTTP Host header in a client request, which makes it easier for remote attackers to conduct DNS rebinding attacks.',
+              '[CVE-2005-2088] The Apache HTTP server before 1.3.34, and 2.0.x before 2.0.55, when acting as an HTTP proxy, allows remote attackers to poison the web cache, bypass web application firewall protection, and conduct XSS attacks via an HTTP request with both a "Transfer-Encoding: chunked" header and a Content-Length header, which causes Apache to incorrectly handle and forward the body of the request in a way that causes the receiving server to process it as a separate HTTP request, aka "HTTP Request Smuggling."',
+              '[CVE-2005-1760] sysreport 1.3.15 and earlier includes contents of the up2date file in a report, which leaks the password for a proxy server in plaintext and allows local users to gain privileges.',
+              '[CVE-2004-2762] The server in IBM Tivoli Storage Manager (TSM) 4.2.x on MVS, 5.1.9.x before 5.1.9.1, 5.1.x before 5.1.10, 5.2.2.x before 5.2.2.3, 5.2.x before 5.2.3, 5.3.x before 5.3.0, and 6.x before 6.1, when the HTTP communication method is enabled, allows remote attackers to cause a denial of service (daemon crash or hang) via unspecified HTTP traffic, as demonstrated by the IBM port scanner 1.3.1.',
+              '[CVE-2004-0700] Format string vulnerability in the mod_proxy hook functions function in ssl_engine_log.c in mod_ssl before 2.8.19 for Apache before 1.3.31 may allow remote attackers to execute arbitrary messages via format string specifiers in certain log messages for HTTPS that are handled by the ssl_log function.',
+              '[CVE-2004-0492] Heap-based buffer overflow in proxy_util.c for mod_proxy in Apache 1.3.25 to 1.3.31 allows remote attackers to cause a denial of service (process crash) and possibly execute arbitrary code via a negative Content-Length HTTP header field, which causes a large amount of data to be copied.',
+              '[CVE-2003-1580] The Apache HTTP Server 2.0.44, when DNS resolution is enabled for client IP addresses, uses a logging format that does not identify whether a dotted quad represents an unresolved IP address, which allows remote attackers to spoof IP addresses via crafted DNS responses containing numerical top-level domains, as demonstrated by a forged 123.123.123.123 domain name, related to an "Inverse Lookup Log Corruption (ILLC)" issue.',
+              '[CVE-2002-2012] Unknown vulnerability in Apache 1.3.19 running on HP Secure OS for Linux 1.0 allows remote attackers to cause "unexpected results" via an HTTP request.',
+              '[CVE-2002-0177] Buffer overflows in icecast 1.3.11 and earlier allows remote attackers to execute arbitrary code via a long HTTP GET request from an MP3 client.',
+              '[CVE-2001-1083] Icecast 1.3.7, and other versions before 1.3.11 with HTTP server file streaming support enabled allows remote attackers to cause a denial of service (crash) via a URL that ends in . (dot), / (forward slash), or \\ (backward slash).',
+              '[CVE-2001-0925] The default installation of Apache before 1.3.19 allows remote attackers to list directories instead of the multiview index.html file via an HTTP request for a path that contains many / (slash) characters, which causes the path to be mishandled by (1) mod_negotiation, (2) mod_dir, or (3) mod_autoindex.',
+              '[CVE-2001-0129] Buffer overflow in Tinyproxy HTTP proxy 1.3.3 and earlier allows remote attackers to cause a denial of service and possibly execute arbitrary commands via a long connect request.',
+              '[CVE-2000-1206] Vulnerability in Apache httpd before 1.3.11, when configured for mass virtual hosting using mod_rewrite, or mod_vhost_alias in Apache 1.3.9, allows remote attackers to retrieve arbitrary files.',
+              '[CVE-2000-0869] The default configuration of Apache 1.3.12 in SuSE Linux 6.4 enables WebDAV, which allows remote attackers to list arbitrary diretories via the PROPFIND HTTP request method.'
+            ],
+            'elements': {}
+          }
+        ],
+        'type': 'x-discovered-service',
+        'spec_version': '2.1',
+        'id': 'x-discovered-service--37755220-eac5-4b26-8018-c80f981c982a',
+        'created': '2021-03-17T07:51:47.001085Z',
+        'modified': '2021-03-17T07:51:47.001085Z'
+      },
+      {
+        'port': '443',
+        'protocol': 'tcp',
+        'state': 'open',
+        'service_name': 'http',
+        'service_product': 'nginx',
+        'service_cpe_list': [
+          'cpe:/a:igor_sysoev:nginx'
+        ],
+        'scripts_list': [
+          {
+            'id': 'http-server-header',
+            'output': [
+              'nginx'
+            ],
+            'elements': {
+              'null': 'nginx'
+            }
+          },
+          {
+            'id': 'vulscan',
+            'output': [
+              'cve.csv:',
+              '[CVE-2013-2070] http/modules/ngx_http_proxy_module.c in nginx 1.1.4 through 1.2.8 and 1.3.0 through 1.4.0, when proxy_pass is used with untrusted HTTP servers, allows remote attackers to cause a denial of service (crash) and obtain sensitive information from worker process memory via a crafted proxy response, a similar vulnerability to CVE-2013-2028.',
+              '[CVE-2013-2028] The ngx_http_parse_chunked function in http/ngx_http_parse.c in nginx 1.3.9 through 1.4.0 allows remote attackers to cause a denial of service (crash) and execute arbitrary code via a chunked Transfer-Encoding request with a large chunk size, which triggers an integer signedness error and a stack-based buffer overflow.',
+              '[CVE-2012-3380] Directory traversal vulnerability in naxsi-ui/nx_extract.py in the Naxsi module before 0.46-1 for Nginx allows local users to read arbitrary files via unspecified vectors.',
+              '[CVE-2012-2089] Buffer overflow in ngx_http_mp4_module.c in the ngx_http_mp4_module module in nginx 1.0.7 through 1.0.14 and 1.1.3 through 1.1.18, when the mp4 directive is used, allows remote attackers to cause a denial of service (memory overwrite) or possibly execute arbitrary code via a crafted MP4 file.',
+              '[CVE-2012-1180] Use-after-free vulnerability in nginx before 1.0.14 and 1.1.x before 1.1.17 allows remote HTTP servers to obtain sensitive information from process memory via a crafted backend response, in conjunction with a client request.',
+              '[CVE-2011-4963] nginx/Windows 1.3.x before 1.3.1 and 1.2.x before 1.2.1 allows remote attackers to bypass intended access restrictions and access restricted files via (1) a trailing . (dot) or (2) certain "$index_allocation" sequences in a request.',
+              '[CVE-2011-4315] Heap-based buffer overflow in compression-pointer processing in core/ngx_resolver.c in nginx before 1.0.10 allows remote resolvers to cause a denial of service (daemon crash) or possibly have unspecified other impact via a long response.',
+              '[CVE-2010-2266] nginx 0.8.36 allows remote attackers to cause a denial of service (crash) via certain encoded directory traversal sequences that trigger memory corruption, as demonstrated using the "%c0.%c0." sequence.',
+              '[CVE-2010-2263] nginx 0.8 before 0.8.40 and 0.7 before 0.7.66, when running on Windows, allows remote attackers to obtain source code or unparsed content of arbitrary files under the web document root by appending ::$DATA to the URI.',
+              "[CVE-2009-4487] nginx 0.7.64 writes data to a log file without sanitizing non-printable characters, which might allow remote attackers to modify a window's title, or possibly execute arbitrary commands or overwrite files, via an HTTP request containing an escape sequence for a terminal emulator.",
+              '[CVE-2009-3898] Directory traversal vulnerability in src/http/modules/ngx_http_dav_module.c in nginx (aka Engine X) before 0.7.63, and 0.8.x before 0.8.17, allows remote authenticated users to create or overwrite arbitrary files via a .. (dot dot) in the Destination HTTP header for the WebDAV (1) COPY or (2) MOVE method.',
+              '[CVE-2009-3896] src/http/ngx_http_parse.c in nginx (aka Engine X) 0.1.0 through 0.4.14, 0.5.x before 0.5.38, 0.6.x before 0.6.39, 0.7.x before 0.7.62, and 0.8.x before 0.8.14 allows remote attackers to cause a denial of service (NULL pointer dereference and worker process crash) via a long URI.',
+              '[CVE-2009-2629] Buffer underflow in src/http/ngx_http_parse.c in nginx 0.1.0 through 0.5.37, 0.6.x before 0.6.39, 0.7.x before 0.7.62, and 0.8.x before 0.8.15 allows remote attackers to execute arbitrary code via crafted HTTP requests.'
+            ],
+            'elements': {}
+          }
+        ],
+        'type': 'x-discovered-service',
+        'spec_version': '2.1',
+        'id': 'x-discovered-service--9fb1a4dc-6364-4a10-81b4-88560ef07658',
+        'created': '2021-03-17T07:51:47.001085Z',
+        'modified': '2021-03-17T07:51:47.001085Z'
+      }
+    ],
+    'cvss_score': 5.8,
+    'type': 'bundle'
+  }
+}

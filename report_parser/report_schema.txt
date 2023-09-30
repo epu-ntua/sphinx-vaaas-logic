@@ -1,0 +1,126 @@
+{
+    "type": "bundle",
+    "id": "identifier with 'bundle--' prefix",
+    "objects": [
+        identity (one) => {
+            "type": string | "identity",
+            "spec_version": string | "2.1",
+            "id": string | identifier with 'identity--' prefix,
+            "created": string | timestamp,
+            "modified": string | timestamp,
+            "name": string | The name of the use that scans 'admin'
+        },
+
+		ipv4-addr (one) => {
+            "type": string | "ipv4-addr",
+            "spec_version": string | "2.1",
+            "id": string | identifier with 'ipv4-addr--' prefix,
+            "value": string | The ip address that is scanned eg."10.0.255.106"
+        },
+
+		course-of-action (zero, one or more) => {
+            "type": string | "course-of-action",
+            "spec_version": string | "2.1",
+            "id": string | "identifier with 'course-of-action--' prefix",
+            "created": string | timestamp,
+            "modified": string | timestamp,
+            "name": string | "Name of the mitigation action eg 'WillNotFix' ",
+            "description": string | The description of the mitigation action
+        },
+
+        vulnerability (zero, one or more) => {
+            type": string | "vulnerability",
+            "spec_version": string | "2.1",
+            "id": string | unique identifier with 'vunlerability--' prefix,
+            "created": string | timestamp,
+            "modified": string | timestamp,
+            "name": string | name of the vulnerability,
+            "external_references" (list with zero, one or more external references related to the vulnerability):
+            [
+                {
+                    "source_name": string |  eg: "cve",
+                    "external_id": string | eg: "CVE-2012-5785"
+                }
+            ],
+            "cvss": string | CVSS of the vulnerability,
+            "threat_level": string | threat level of the vulnerability,
+            "vulnerable_port": string
+        }
+
+		relationship (The relation between a vulnerability and a course-of-action)(zero, one or more) => {
+            "type": string | "relationship",
+            "spec_version": string | "2.1",
+            "id": string | unique identifier with "relationship--" prefix,
+            "created": string | timestamp,
+            "modified": string | timestamp,
+            "relationship_type": string,
+            "source_ref": string | The unique identifier of a course-of-action eg:"course-of-action--42bf8687-cdc9-4600-8e04-e505fccf7166",
+            "target_ref": string | The unique identifier of a vulnerabilty eg: "vulnerability--7ed5a589-c324-4747-aaab-abdc1ee18a19"
+        }
+
+		errors (Errors that may occur while scanning, every property is "string") (zero, one or more) => {
+            "count": string | "2",
+            "error": [
+                {
+                    "description": string | "NVT timed out after 600 seconds.",
+                    "host": {
+                        "#text": string | "10.0.255.106",
+                        "asset": {
+                            "@asset_id": string | "d7d444a0-2cfc-4324-848a-71bc26b1a94a"
+                        }
+                    },
+                    "nvt": {
+                        "@oid": string | "1.3.6.1.4.1.25623.1.0.804489",
+                        "cvss_base": string | "10.0",
+                        "name": string | "GNU Bash Environment Variable Handling Shell Remote Command Execution Vulnerability",
+                        "type": string | "nvt"
+                    },
+                    "port": string | "general/tcp",
+                    "scan_nvt_version": string | null,
+                    "severity": string | "-3"
+                },
+                {
+                    "description": string | "NVT timed out after 600 seconds.",
+                    "host": {
+                        "#text": string | "10.0.255.106",
+                        "asset": {
+                            "@asset_id": string | "d7d444a0-2cfc-4324-848a-71bc26b1a94a"
+                        }
+                    },
+                    "nvt": {
+                        "@oid": string | "1.3.6.1.4.1.25623.1.0.804489",
+                        "cvss_base": string | "10.0",
+                        "name": string | "GNU Bash Environment Variable Handling Shell Remote Command Execution Vulnerability",
+                        "type": string | "nvt"
+                    },
+                    "port": string | "general/tcp",
+                    "scan_nvt_version": string | null,
+                    "severity": string | "-3"
+                }
+            ]
+        }
+
+		"gmp_version" (the gmp version): string,
+
+		"scan_end_time" (the end time of the scan): string | timestamp,
+
+		"scan_start_time" (the start time of the scan): string | timestamp,
+
+		"scan_status": string,
+
+		"severity": {
+			"filtered": string | "10.0",
+			"full": string | "10.0"
+		},
+
+		"target_id": string | "40444803-1dac-4447-b21f-4ea78f3b12c1",
+
+		"target_name": string | "target1",
+
+		"task_id": string | "task--d59e9016-fff2-4fb6-9fa7-a4a572fa899d",
+
+		"task_name": string | "task1",
+
+		"vulns": string | "185"
+    ]
+}

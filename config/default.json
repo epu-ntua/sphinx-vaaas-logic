@@ -1,0 +1,36 @@
+{
+  "DEV": {
+    "app_id": "a4a01132a29e4e738f4c03ebe898a624",
+    "SM_IP": "http://sphinx-kubernetes.intracom-telecom.com/SMPlatform/manager/rst",
+    "KAFKA_USERNAME": "kafkauser",
+    "KAFKA_PASSWORD": "kafkauser123",
+    "OAUTH_CLIENT_ID": "SIEM",
+    "OAUTH_TOKEN_ENDPOINT_URI": "http://sphinx-kubernetes.intracom-telecom.com/SMPlatform/manager/rst/getKafkaToken",
+    "BOOTSTRAP_SERVERS": "bootstrap.146.124.106.170.nip.io:443",
+    "KAFKA_CERT": "for_clients.crt",
+    "ASSETS_URL": "http://127.0.0.1",
+    "ASSETS_PORT": "8002",
+    "VAAAS_URL": "http://127.0.0.1",
+    "VAAAS_PORT": "8003",
+    "ASSESSMENT_THRESHOLD": 5,
+    "redis_url": "10.0.1.220",
+    "redis_port": 6379
+  },
+  "PROD": {
+    "app_id": "a4a01132a29e4e738f4c03ebe898a624",
+    "SM_IP": "http://sphinx-kubernetes.intracom-telecom.com/SMPlatform/manager/rst",
+    "KAFKA_USERNAME": "kafkauser",
+    "KAFKA_PASSWORD": "kafkauser123",
+    "OAUTH_CLIENT_ID": "SIEM",
+    "OAUTH_TOKEN_ENDPOINT_URI": "http://sphinx-kubernetes.intracom-telecom.com/SMPlatform/manager/rst/getKafkaToken",
+    "BOOTSTRAP_SERVERS": "bootstrap.146.124.106.170.nip.io:443",
+    "KAFKA_CERT": "for_clients.crt",
+    "ASSETS_URL": "http://127.0.0.1",
+    "ASSETS_PORT": "8002",
+    "VAAAS_URL": "http://127.0.0.1",
+    "VAAAS_PORT": "8003",
+    "ASSESSMENT_THRESHOLD": 5,
+    "redis_url": "127.0.0.1",
+    "redis_port": 6379
+  }
+}

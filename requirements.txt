@@ -1,0 +1,7 @@
+redis
+APScheduler
+sanic
+kafka-python
+PyYAML
+SQLAlchemy
+stix2
